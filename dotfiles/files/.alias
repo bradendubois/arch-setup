@@ -1,0 +1,9 @@
+
+# show more info on ls
+alias ls="ls -l"
+
+# moving up one level in directory
+alias ..="cd .."
+
+# where I keep my coding projects
+export CODE="$HOME/Projects"
