@@ -8,7 +8,7 @@ clion
 
 # Languages
 jdk
-dart-sass
+sass
 goland
 rust
 

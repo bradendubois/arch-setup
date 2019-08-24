@@ -6,7 +6,7 @@ noColor='\033[0m'
 # ************* Software Install *************
 
 # Script used to install all software
-#./software-install/sw-install.sh
+./software-install/sw-install.sh
 
 # ************* Dotfiles Install *************
 
@@ -22,7 +22,7 @@ then
         esac
     done
 fi
-    
+
 cp -r ./dotfiles ~/.dotfiles
 
 printf "${color}Deleting old ~/.bash_profile file.${noColor}\n"
