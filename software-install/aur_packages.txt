@@ -1,8 +1,3 @@
-# New packages installed are automatically appended to the end of this 
-# file, so they are marked as "unsorted", but can be placed wherever appropriate
-
-# TODO - Make new packages actually get added
-
 # IDEs
 code
 datagrip
@@ -36,6 +31,7 @@ ttf-ms-fonts
 neofetch
 ufetch-git
 yakuake-skin-arc-git
+gllock-git
 
 # Games
 epsxe
@@ -46,5 +42,3 @@ mcpelauncher-msa-git
 mcpelauncher-msa-ui-qt-git
 mcpelauncher-ui-git
 minecraft-launcher
-
-# unsorted
