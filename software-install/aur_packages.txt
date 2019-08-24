@@ -10,6 +10,7 @@ clion
 jdk
 dart-sass
 goland
+rust
 
 # Software
 atom
@@ -32,6 +33,7 @@ neofetch
 ufetch-git
 yakuake-skin-arc-git
 gllock-git
+exa-git
 
 # Games
 epsxe

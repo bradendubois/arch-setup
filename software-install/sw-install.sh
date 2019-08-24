@@ -9,10 +9,9 @@ elif [ ! -f ./software-install/aur_packages.txt ]
 then
   echo "aur_packages.txt is not a file, no AUR packages will be installed"
 else
-then
-  
   # First, check if pacaur is installed, as it can be run without root
-  if [ pacman -Qi pacaur != 0 ]
+  pacman -Qi pacaur
+  if [ $? != 0 ]
   then
     # first, pacaur
     echo "Installing pacaur."
@@ -28,22 +27,19 @@ then
     then
 
       # Ensure $package is not already installed
-      if [ pacman -Qi $package != 0 ]
+      pacaur -Qi $package > /dev/null
+      if [ $? != 0 ]
       then
 
         echo "Searching for $package"
-        pacaur -S $package;
+        pacaur -S --noconfirm $package;
 
         # Ensure $package is found/exists
-        if [ $? == 0 ]
-        then
-          echo "$package was installed successfully."
-        else
+        if [ $? != 0 ]
         then
           echo "$package was not found or failed to install."
         fi  
       else
-      then
         echo "$package is already installed."
       fi
     fi
@@ -59,10 +55,10 @@ elif [ ! -f ./software-install/curl_packages.txt ]
 then
   echo "curl_packages.txt is not a file, no CURL packages will be installed"
 else
-then
 
   # First, check if curl is installed, as it can be run without root
-  if [ pacman -Qi curl != 0 ]
+  pacaur -Qi curl
+  if [ $? != 0 ]
   then
     echo "Installing pacaur."
     # first, curl
