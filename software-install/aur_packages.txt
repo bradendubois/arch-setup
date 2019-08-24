@@ -1,0 +1,50 @@
+# New packages installed are automatically appended to the end of this 
+# file, so they are marked as "unsorted", but can be placed wherever appropriate
+
+# TODO - Make new packages actually get added
+
+# IDEs
+code
+datagrip
+pycharm-professional
+webstorm
+intellij-idea-ultimate-edition
+clion
+
+# Languages
+jdk
+dart-sass
+goland
+
+# Software
+atom
+discord
+spotify
+spicetify-cli
+boostnote
+slack-desktop
+chromium-widevine
+gitkraken
+gllock-git
+deluge-stable-git
+docker-git
+
+# Tools / Utilities
+gotop
+auryo
+ttf-ms-fonts
+neofetch
+ufetch-git
+yakuake-skin-arc-git
+
+# Games
+epsxe
+
+# Minecraft, Bedrock Edition & Java
+mcpelauncher-linux-git
+mcpelauncher-msa-git
+mcpelauncher-msa-ui-qt-git
+mcpelauncher-ui-git
+minecraft-launcher
+
+# unsorted

@@ -4,7 +4,7 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-for DOTFILE in `find ./files -type f`
+for DOTFILE in `find ~/.dotfiles/files -type f`
 do
-  [ -f “$DOTFILE” ] && source “$DOTFILE”
+  source $DOTFILE
 done

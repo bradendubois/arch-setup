@@ -1,0 +1,4 @@
+# List all URLs to be grabbed through CURL
+
+https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh
+

@@ -1,57 +1,47 @@
 #!
 
-# The package name of each item to install from the AUR
-aur_list=(
+# AUR packages
 
-  # IDEs
-  code
-  datagrip
-  pycharm-professional
-  webstorm
-  intellij-idea-ultimate-edition
-  clion
-
-  # Languages
-  jdk
-  dart-sass
-  goland
-
-  # Software
-  atom
-  discord
-  spotify
-  spicetify-cli
-  boostnote
-  slack-desktop
-  chromium-widevine
-  gitkraken
-  gllock-git
-  deluge-stable-git
-  docker-git
-
-  # Games
-  epsxe
-
-  # Tools / Utilities
-  gotop
-  auryo
-  ttf-ms-fonts
-  neofetch
-  ufetch-git
-  yakuake-skin-arc-git
-
-  # Minecraft, Bedrock Edition & Java
-  mcpelauncher-linux-git
-  mcpelauncher-msa-git
-  mcpelauncher-msa-ui-qt-git
-  mcpelauncher-ui-git
-  minecraft-launcher
-)
-
-for var in "${aur_list[@]}"
+# Detect if there is no file
+if [ ! -e ./software-install/aur_packages.txt ]
+then
+  ls .;
+  echo "No aur_packages.txt file found, no AUR packages will be installed"
+# Detect if it is not a file (possibly a directory)
+elif [ ! -f ./software-install/aur_packages.txt ]
+then
+  echo "aur_packages.txt is not a file, no AUR packages will be installed"
+# Install all AUR packages
+else
+while read package;
 do
-  echo -S "${var}"
-done
+    if [[ ${package::1} != "#" && ${package::1} != "" ]]; # Ignore empty spots / comments
+    then
+        echo -S $package;
+    fi
+done < ./software-install/aur_packages.txt;
+fi;
 
-# Install Oh-My-Bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+# CURL packages
+
+# Detect if there is no file
+if [ ! -e ./software-install/curl_packages.txt ]
+then
+  echo "No curl_packages.txt file found, no CURL packages will be installed"
+# Detect if it is not a file (possibly a directory)
+elif [ ! -f ./software-install/curl_packages.txt ]
+then
+  echo "curl_packages.txt is not a file, no CURL packages will be installed"
+# Install anything using CURL
+else
+while read package;
+do
+    if [[ ${package::1} != "#" && ${package::1} != "" ]]; # Ignore empty spots / comments
+    then
+        # echo -c "$(curl -fsSL $package)";
+        echo "Hello"
+    fi
+done < ./software-install/curl_packages.txt;
+fi;
+
+exit 0

@@ -1,10 +1,15 @@
 #!
 
-# Script used to install all software from the AUR
+# Script used to install all software
 ./software-install/sw-install.sh
 
+# .dotfiles exists and is a directory
+if [ -e ~/.dotfiles ] && [ -d ~/.dotfiles ]
+then
+    sudo rm -rf ~/.dotfiles
+
 # Copy the dotfiles to the home directory
-sudo cp ./dotfiles ~
+sudo cp -r ./dotfiles ~/.dotfiles
 
 # Delete the old bash_profile file
 sudo rm -rf ~/.bash_profile

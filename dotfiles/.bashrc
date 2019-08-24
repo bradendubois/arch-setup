@@ -99,3 +99,8 @@ source $OSH/oh-my-bash.sh
 # Example aliases
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
+
+for DOTFILE in `find ~/.dotfiles/files -type f`
+do
+  source $DOTFILE
+done
