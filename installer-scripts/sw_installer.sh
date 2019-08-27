@@ -1,5 +1,8 @@
 #!
 
+color='\033[1;34m'
+noColor='\033[0m'
+
 # AUR packages
 
 if [ ! -e ./software-install/aur_packages.txt ]

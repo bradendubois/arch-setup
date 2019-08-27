@@ -6,33 +6,34 @@ noColor='\033[0m'
 # ************* Software Install *************
 
 # Script used to install all software
-./software-install/sw-install.sh
+#./software-install/sw-install.sh
 
-# ************* Dotfiles Install *************
+printf "${color}Choose an option for installation.${noColor}\n"
 
-# .dotfiles exists and is a directory, must have a previous install
-if [ -e ~/.dotfiles ] && [ -d ~/.dotfiles ]
-then
-    printf "${color}Previous ~/.dotfiles directory already found!${noColor}\n"
-    printf "${color}Do you wish to remove the old directory?${noColor}\n"
-    select yn in "Yes" "No"; do
-        case $yn in
-            Yes ) echo "Deleting ~/.dotfiles"; sudo rm -rf ~/.dotfiles; break;;
-            No ) exit;;
-        esac
-    done
-fi
+options=("All" "Software Installs" "Dotfile Installs" "Exit")
 
-cp -r ./dotfiles ~/.dotfiles
+select option in "${options[@]}"
+do
+    case $option in
+        "All")
+            echo "Installing all."
+            ./installer-scripts/sw_installer.sh
+            ./installer-scripts/dotfile_installer.sh
+            break;;
+        "Software Installs")
+            echo "Installing software."
+            ./installer-scripts/sw_installer.sh
+            break;;
+        "Dotfile Installs")
+            echo "Installing dotfiles."
+            pwd
+            ./installer-scripts/dotfile_installer.sh
+            break;;
+        "Exit")
+            echo "No action, exiting."
+            exit;;
+        *) echo "Invalid option!";;
+    esac
+done
 
-printf "${color}Deleting old ~/.bash_profile file.${noColor}\n"
-sudo rm -rf ~/.bash_profile
-
-printf "${color}Symlinking new .bash_profile file.${noColor}\n"
-sudo ln -sv ~/.dotfiles/.bash_profile ~
-
-printf "${color}Deleting old ~/.bashrc file.${noColor}\n"
-sudo rm -rf ~/.bashrc
-
-printf "${color}Symlinking new .bashrc file.${noColor}\n"
-sudo ln -sv ~/.dotfiles/.bashrc ~
+printf "${color}Complete.${noColor}\n"

@@ -38,8 +38,6 @@ or
 
 ### Configuration
 
-<hr>  
-
 **AUR Packages**
 
 - Add packages to be installed by adding the *package name* to the text file at ``software-install/aur_packages.txt``.
