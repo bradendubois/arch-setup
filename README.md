@@ -1,7 +1,5 @@
 # configs
 
-<hr>
-
 A collection of tools I use to set up my Arch-based (Manjaro) workspace for development as well as everyday use.
 
 - Installation scripts for: 
@@ -12,22 +10,16 @@ A collection of tools I use to set up my Arch-based (Manjaro) workspace for deve
 
 ## Scripts
 
-<hr>
-
 These scripts are written to run in ``bash``, and work on an Arch-based distro, though I believe they could be modified for most other \*NIX platforms. 
 
 
 ### Requirements
-
-<hr>
 
 - Unix OS (tested on Manjaro)
   - Should be an Arch-based OS as the installation for software relies on *[pacman](https://wiki.archlinux.org/index.php/pacman)* and *[pacaur](https://wiki.archlinux.org/index.php/AUR_helpers)*, though it could be reasonably modified to use apt-get or similar.
 - Internet connection (for software download/installation, though it is able to install dotfiles without a connection).
 
 ### Install / Run
-
-<hr>
 
 Assuming your working directory is the root of ``configs``:
 
