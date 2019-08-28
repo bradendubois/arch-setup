@@ -1,3 +1,6 @@
+# The following is a list of packages on the Arch User Repository.
+# Simply add or remove/comment a package to add/remove it from install.
+
 # IDEs
 code
 datagrip

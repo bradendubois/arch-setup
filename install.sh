@@ -1,39 +1,85 @@
 #!
 
-color='\033[1;34m'
-noColor='\033[0m'
+# *************** Config Sourcing **************
+#
+# The following are defined in config.sh :
+#
+# $softwareInstallerPath
+# $dotfileInstallerPath
+#
+# announce : a helper function for pretty-fying text
 
-# ************* Software Install *************
+source ./config.sh
 
-# Script used to install all software
-#./software-install/sw-install.sh
+# ***************** Functions ****************
 
-printf "${color}Choose an option for installation.${noColor}\n"
+# These functions are helper/wrappers for the software and dotfile
+#   installation, to indicate error codes that are returned by the files 
 
-options=("All" "Software Installs" "Dotfile Installs" "Exit")
+software_install() 
+{
+    sh $softwareInstallerPath
+    ex=$?
+
+    if [ ex != 0 ]
+    then
+        exit ${ex}
+    fi
+}
+
+dotfile_install() 
+{
+    sh $dotfileInstallerPath
+    ex=$?
+
+    if [ ex != 0 ]
+    then
+        exit ${ex}
+    fi
+}
+
+# ***********************************************
+
+options=(
+    "All"
+    "Software Installs"
+    "Dotfile Installs"
+    "Exit"
+)
+
+announce "Choose an option for installation."
 
 select option in "${options[@]}"
 do
     case $option in
+
         "All")
-            echo "Installing all."
-            ./installer-scripts/sw_installer.sh
-            ./installer-scripts/dotfile_installer.sh
+            announce "\nInstalling all."
+            software_install
+            dotfile_install
             break;;
+
         "Software Installs")
-            echo "Installing software."
-            ./installer-scripts/sw_installer.sh
+            announce "\nInstalling software."
+            software_install
             break;;
+
         "Dotfile Installs")
-            echo "Installing dotfiles."
-            pwd
-            ./installer-scripts/dotfile_installer.sh
+            announce "\nInstalling dotfiles."
+            dotfile_install
             break;;
+
         "Exit")
-            echo "No action, exiting."
+            announce "\nNo action, exiting."
             exit;;
+
         *) echo "Invalid option!";;
     esac
 done
 
-printf "${color}Complete.${noColor}\n"
+if [ $? == 0 ]
+then
+    announce "Completed."
+else
+    announce "Completed with errors."
+fi
