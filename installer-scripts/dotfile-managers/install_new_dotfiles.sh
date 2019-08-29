@@ -15,7 +15,7 @@
 
 source ./config.sh
 
-if [ -e ~/.dotfiles]
+if [ -e ~/.dotfiles ]
 then
     announce "Unexpected error! ~/.dotfiles exists, but it should not."
     announce "Please remove ~/.dotfiles and run again."
@@ -38,4 +38,4 @@ do
         announce "Unexpected error in symlinking."
         exit 43
     fi
-fi
+done

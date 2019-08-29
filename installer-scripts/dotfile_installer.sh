@@ -34,6 +34,7 @@ do
         then
             announce "file"
         elif [ -d $file ]
+        then
             announce "directory."
         fi
 
@@ -41,7 +42,6 @@ do
         do
             case $opt in
                 "Yes" )
-                    announce "\nBacking up ${file}"
                     sh $backupScriptPath $file
 
                     ex=$?
@@ -75,6 +75,7 @@ do
     then
         printf "Directory: "
     elif [ -f $file ]
+    then
         printf "File: "
     fi
 
@@ -90,6 +91,7 @@ do
             
             for file in "${dotfile_set[@]}"
             do
+    
                 sh $deleteScriptPath $file
 
                 ex=$?
@@ -122,7 +124,7 @@ ex=$?
 
 if [ $ex != 0 ]
 then
-    announce "Unexpected error in symlinking!"
+    announce "Unexpected error in installation!"
     announce "Exiting with error code ${ex}."
     exit ${ex}
 fi

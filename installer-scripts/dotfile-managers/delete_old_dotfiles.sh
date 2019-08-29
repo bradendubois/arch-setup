@@ -11,7 +11,7 @@
 source ./config.sh
 
 # ensure script was copied correctly by checking that one argument was given
-if [ $# != 0 ]
+if [ $# != 1 ]
 then
     announce "Incorrect number of arguments provided to $0"
     announce "Cannot proceed."
@@ -20,7 +20,7 @@ then
 fi
 
 # The target to backup when called
-deletionTarget=${deletionTarget}
+deletionTarget=$@
 
 if [ ! -e ${deletionTarget} ]
 then
