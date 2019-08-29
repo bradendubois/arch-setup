@@ -27,6 +27,8 @@ gitkraken
 gllock-git
 deluge-stable-git
 docker-git
+filezilla
+vlc
 
 # Tools / Utilities
 gotop
@@ -37,6 +39,7 @@ ufetch-git
 yakuake-skin-arc-git
 gllock-git
 exa-git
+latte-dock
 
 # Games
 epsxe
