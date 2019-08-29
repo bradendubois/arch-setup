@@ -38,8 +38,8 @@ dotfileInstallerPath=./installer-scripts/dotfile_installer.sh
 package_dir=./package_lists
 
 # AUR and CURL package/url lists
-aur_list=$list_dir/aur_packages.txt
-curl_list=$list_dir/curl_packages.txt
+aur_list=$package_dir/aur_packages.txt
+curl_list=$package_dir/curl_packages.txt
 
 # ******************************
 

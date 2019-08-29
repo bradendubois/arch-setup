@@ -33,7 +33,7 @@ else
     if [ $? != 0 ]
     then
       announce "${pacWrapper} not installed, cannot continue package installation!"
-      break;;
+      exit 81
     fi
   fi
 
@@ -86,7 +86,7 @@ else
     if [ $? != 0 ]
     then
       announce "CURL not installed, cannot continue CURL package installation!"
-      break;;
+      exit 82
   fi
 
   while read package;

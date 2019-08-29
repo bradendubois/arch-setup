@@ -16,7 +16,7 @@ then
     announce "Incorrect number of arguments provided to $0"
     announce "Cannot proceed."
     
-    exit 13
+    exit 14
 fi
 
 # The target to backup when called
@@ -32,4 +32,11 @@ else
     announce "Deleting ${deletionTarget}"
     sudo rm -rf ${deletionTarget}
 
+    if [ $? != 0 ]
+    then
+        announce "Failed to delete ${deletionTarget}"
+        announce "Cannot proceed."
+
+        exit 28
+    fi
 fi
