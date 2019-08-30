@@ -56,8 +56,8 @@ or
 
 - Dotfiles to backup/delete
   - *$dotfile_set*
-  - This is the set of files that *may* exist on the user's machine and will be backed up (if prompted) and deleted.
-  - **Default**: dotfile_set=( ~/.bashrc ~/.bash_profile ~/.dotfiles )
+  - This is the set of files that *may* exist on the user's machine and will be backed up (if prompted) and deleted. 
+  - **Default**: dotfile_set=( .bashrc .bash_profile .dotfiles )
 
 - Dotfiles to install and symlink
   - *$symlink_set*

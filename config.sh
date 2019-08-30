@@ -52,7 +52,8 @@ pacWrapper=pacaur
 
 # Dotfiles to backup/delete
 # These are files that may exist on the user's machine, and will
-#   be replaced later, so they may wish to be backed up.
+#   be replaced later, so they may wish to be backed up. These are
+#   assumed to be in the user's home (~) directory.
 dotfile_set=(
     .bashrc
     .bash_profile
