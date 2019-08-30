@@ -1,9 +1,9 @@
 # always show -l on ls
-alias ls="exa --long --tree -L=2 -h"
+alias ls="ls -la"
 
 # moving up one level in directory
 alias ..="cd .."
 
 # exa is a replacement for ls
-alias exa="exa --long --tree -L=2 -h"
+alias exa="exa --long --tree -L=2"
 

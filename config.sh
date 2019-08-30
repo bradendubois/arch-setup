@@ -27,6 +27,8 @@ installScriptPath=$dotManagerPath/install_new_dotfiles.sh
 # Path to the directory of the new dotfiles to install
 dotfileDirectoryPath=./dotfiles
 
+# *****************  Main Scripts ****************
+
 # These are the paths to the scripts that manage the installation
 #   of software and dotfile setup
 softwareInstallerPath=./installer-scripts/software_installer.sh
@@ -52,17 +54,17 @@ pacWrapper=pacaur
 # These are files that may exist on the user's machine, and will
 #   be replaced later, so they may wish to be backed up.
 dotfile_set=(
-    ~/.bashrc
-    ~/.bash_profile
-    ~/.dotfiles
+    .bashrc
+    .bash_profile
+    .dotfiles
 )
 
 # Dotfiles to symlink from .dotfiles/
 # These files are included in dotfiles and will be symlinked to the
 #   user's home directory. 
 symlink_set=(
-    .bashrc
     .bash_profile
+    .bashrc    
 )
 
 # *****************  Nice Colors ****************

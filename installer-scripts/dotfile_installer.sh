@@ -25,15 +25,15 @@ source ./config.sh
 for file in ${dotfile_set[@]}
 do
     
-    if [ -e $file ]
+    if [ -e ~/$file ]
     then
-        announce "\nPrevious ${file} found! Would you like to back it up?"
-        printf "${file} is a "
+        announce "\nPrevious ~/${file} found! Would you like to back it up?"
+        printf "~/${file} is a "
 
-        if [ -f $file ]
+        if [ -f ~/$file ]
         then
             announce "file"
-        elif [ -d $file ]
+        elif [ -d ~/$file ]
         then
             announce "directory."
         fi
@@ -54,7 +54,7 @@ do
 
                     break;;
                 "No" )
-                    announce "Skipping ${file}"
+                    announce "Skipping ~/${file}"
                     break;;
                 * )
                     announce "\nInvalid selection!"
@@ -71,15 +71,15 @@ announce "\nDeleting the following files:"
 
 for file in "${dotfile_set[@]}"
 do
-    if [ -d $file ]
+    if [ -d ~/$file ]
     then
         printf "Directory: "
-    elif [ -f $file ]
+    elif [ -f ~/$file ]
     then
         printf "File: "
     fi
 
-    echo $file
+    echo ~/$file
 done
 
 announce "\nPlease confirm: [Yes/No]"
@@ -92,7 +92,7 @@ do
             for file in "${dotfile_set[@]}"
             do
     
-                sh $deleteScriptPath $file
+                sh $deleteScriptPath ~/$file
 
                 ex=$?
 
@@ -118,7 +118,7 @@ done
 # ************ Install New Dotfiles ************
 
 announce "Installing and symlinking new dotfiles."
-sh $installScriptPath $dotfileDirectoryPath
+sh $installScriptPath
 
 ex=$?
 

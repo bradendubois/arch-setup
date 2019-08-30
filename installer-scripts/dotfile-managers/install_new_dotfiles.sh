@@ -26,7 +26,7 @@ fi
 announce "Copying new dotfiles to ~/.dotfiles"
 cp -r $dotfileDirectoryPath ~/.dotfiles
 
-for file in $symlink_set
+for file in ${symlink_set[@]}
 do
     announce "Symlinking ${file} to ~"
     sudo ln -sv ~/.dotfiles/$file ~

@@ -63,7 +63,7 @@ then
 fi
 
 # backup directory exists and is a directory and has permissions to rwx
-announce "Backing up old ${backupTarget}."
+announce "Backing up old ~/${backupTarget}."
 
 if [ -e $dotBackupDir/$backupTarget ]
 then
@@ -71,11 +71,11 @@ then
     sudo rm -rf $dotBackupDir/$backupTarget
 fi
 
-if [ -d $backupTarget ]
+if [ -d ~/$backupTarget ]
 then
-    cp -r $backupTarget $dotBackupDir
+    cp -r ~/$backupTarget $dotBackupDir
 else
-    cp $backupTarget $dotBackupDir
+    cp ~/$backupTarget $dotBackupDir
 fi
 
 if [ $? == 0 ]
