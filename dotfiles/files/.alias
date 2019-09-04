@@ -1,5 +1,5 @@
 # always show -l on ls
-alias ls="ls -la"
+alias ls="ls -la --color=auto"
 
 # moving up one level in directory
 alias ..="cd .."
@@ -7,3 +7,18 @@ alias ..="cd .."
 # exa is a replacement for ls
 alias exa="exa --long --tree -L=2"
 
+# better than just 'sudo' 
+alias pls="sudo"
+alias plz="sudo"
+alias please="sudo"
+
+# spotifycli
+alias playing="spotifycli --status"
+alias play="spotifycli --play"
+alias pause="spotifycli --pause"
+alias skip="spotifycli --next"
+
+# audio
+alias volume="pulsemixer --get-volume | cut -d ' ' -f 1"
+alias mute="pactl set-sink-mute @DEFAULT_SINK@ 1"
+alias unmute="pactl set-sink-mute @DEFAULT_SINK@ 0"
