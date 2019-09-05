@@ -39,9 +39,10 @@ dotfileInstallerPath=./installer-scripts/dotfile_installer.sh
 # Directory containing the lists of packages for various package managers
 package_dir=./package_lists
 
-# AUR and CURL package/url lists
+# AUR/CURL/pip package/url lists
 aur_list=$package_dir/aur_packages.txt
 curl_list=$package_dir/curl_packages.txt
+pip_list=$package_dir/pip_packages.txt
 
 # ******************************
 

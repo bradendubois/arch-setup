@@ -20,5 +20,7 @@ alias skip="spotifycli --next"
 
 # audio
 alias volume="pulsemixer --get-volume | cut -d ' ' -f 1"
+alias volumeup="pulsemixer --change-volume +5"
+alias volumedown="pulsemixer --change-volume -5"
 alias mute="pactl set-sink-mute @DEFAULT_SINK@ 1"
 alias unmute="pactl set-sink-mute @DEFAULT_SINK@ 0"

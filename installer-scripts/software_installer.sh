@@ -37,6 +37,8 @@ else
     fi
   fi
 
+  announce "*************** AUR Packages ***************"
+
   # Now, can install all packages using the package wrapper.
   while read package;
   do
@@ -75,7 +77,7 @@ elif [ ! -f $curl_list ]  # check if $curl_list is a file
 then
   announce "curl_packages.txt is not a file, no CURL packages will be installed"
 else
-  # First, check if curl is installed, as it can be run without root
+  # First, check if curl is installed
   $pacWrapper -Qi curl
   
   if [ $? != 0 ]
@@ -89,6 +91,8 @@ else
       exit 82
   fi
 
+  announce "*************** CURL Packages **************"
+
   while read package;
   do
     # Ignore empty spots / comments
@@ -97,4 +101,39 @@ else
       sh -c "$(curl -fsSL $package)";
     fi
   done < $curl_list
+fi;
+
+# *************** PIP Packages **************
+
+if [ ! -e $pip_list ]    # check if $pip_list exists
+then
+  announce "No pip_packages.txt file found, no pip packages will be installed"
+elif [ ! -f $pip_list ]  # check if $pip_list is a file
+then
+  announce "pip_packages.txt is not a file, no pip packages will be installed"
+else
+  # First, check if pip is installed
+  $pacWrapper -Qi pip
+  
+  if [ $? != 0 ]
+  then
+    announce "Installing pip."
+    $pacWrapper -S pip
+
+    if [ $? != 0 ]
+    then
+      announce "Pip not installed, cannot continue pip package installation!"
+      exit 83
+  fi
+
+  announce "*************** PIP Packages ***************"
+
+  while read package;
+  do
+    # Ignore empty spots / comments
+    if [[ ${package::1} != "#" && ${package::1} != "" ]]; 
+    then
+      pip install $package
+    fi
+  done < $pip_list
 fi;

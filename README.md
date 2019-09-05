@@ -15,7 +15,7 @@ These scripts are written to run in ``bash``, and work on an Arch-based distro, 
 
 ### Requirements
 
-- Unix OS (tested on Manjaro)
+- Arch-based OS (tested on Manjaro)
   - Should be an Arch-based OS as the installation for software relies on *[pacman](https://wiki.archlinux.org/index.php/pacman)* and *[pacaur](https://wiki.archlinux.org/index.php/AUR_helpers)* (by default), though it could be reasonably modified to use apt-get or similar.
 - Internet connection (for software download/installation, though it is able to install dotfiles without a connection).
 
@@ -68,8 +68,9 @@ or
 
 **Package Lists**
 
-- aur_list=$package_dir/aur_packages.txt
-- curl_list=$package_dir/curl_packages.txt
+- *aur_list*=`$package_dir`/**aur_packages.txt**
+- *curl_list*=`$package_dir`/**curl_packages.txt**
+- *pip_list*=`$package_dir`/**pip_packages.txt**
 ~Where `$package_dir` by default is ./package_lists~
 
 **AUR Packages**
@@ -81,6 +82,11 @@ or
 
 - Add packages to be installed by adding the *URL* to the text file at ``$curl_list``.
 - Remove packages to be installed by removing the *URL* from the text file at ``$curl_list``, **or** place a ``#`` in front of an entry to ignore it.
+
+**PIP Packages**
+
+- Add packages to be installed by adding the *pip package* to the text file at ``$pip_list``.
+- Remove packages to be installed by removing the *pip package* from the text file at ``$pip_list``, **or** place a ``#`` in front of an entry to ignore it.
 
 #### Preferences
 
