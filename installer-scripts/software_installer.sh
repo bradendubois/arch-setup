@@ -113,12 +113,12 @@ then
   announce "pip_packages.txt is not a file, no pip packages will be installed"
 else
   # First, check if pip is installed
-  $pacWrapper -Qi pip
+  $pacWrapper -Qi python-pip
   
   if [ $? != 0 ]
   then
     announce "Installing pip."
-    $pacWrapper -S pip
+    $pacWrapper -S python-pip
 
     if [ $? != 0 ]
     then
