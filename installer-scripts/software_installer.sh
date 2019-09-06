@@ -21,8 +21,7 @@ elif [ ! -f $aur_list ] # check if $aur_list is a file
 then
   announce "aur_packages.txt is not a file, no AUR packages will be installed."
 else
-  # First, check if the package wrapper (default : pacaur) is installed, 
-  #   as it can be run without root
+  # First, check if the package wrapper (default : pacaur) is installed
   pacman -Qi $pacWrapper > /dev/null
   
   if [ $? != 0 ]    # Non-zero means the package wrapper is *not* installed

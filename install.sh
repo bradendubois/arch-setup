@@ -1,5 +1,10 @@
 #!
 
+# Used to allow the relative paths to work if the working directory is not
+# the root of this project when run
+scriptDir=$(dirname -- "$(readlink -f -- "$BASH_SOURCE")")
+cd $scriptDir
+
 # *************** Config Sourcing **************
 #
 # The following are defined in config.sh :

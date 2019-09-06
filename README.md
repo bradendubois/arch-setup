@@ -1,4 +1,4 @@
-# configs
+# arch-setup
 
 A collection of tools I use to set up my Arch-based (Manjaro) workspace for development as well as everyday use.
 
@@ -25,7 +25,7 @@ These scripts are written to run in ``bash``, and work on an Arch-based distro, 
 
 ### Install / Run
 
-Assuming your working directory is the root of ``configs``:
+Assuming your working directory is the root of ``arch-setup``:
 
 ```bash
 ./install.sh
@@ -97,7 +97,7 @@ or
 
 - Preferred `pacman` wrapper
   - `$pacWrapper`
-  - This is the preferred wrapper for pacman as it can be run without root. If the user wanted to simply use `pacman`, setting this *to* `pacman` would likely work.
+  - This is the preferred wrapper for pacman to access the AUR. If the user wanted to simply use `pacman`, setting this *to* `pacman` would likely work.
   - **Default**: `pacWrapper`=pacaur
 
 - Preferred color for formatting text
