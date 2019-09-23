@@ -66,7 +66,8 @@ dotfile_set=(
 #   user's home directory. 
 symlink_set=(
     .bash_profile
-    .bashrc    
+    .bashrc
+    .calcurse/
 )
 
 # *****************  Nice Colors ****************
