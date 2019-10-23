@@ -1,13 +1,11 @@
-# always show -l on ls
-alias ls="ls -la --color=auto"
-
 # moving up one level in directory
 alias ..="cd .."
 
 # exa is a replacement for ls
-alias exa="exa --long --tree -L=2"
+alias exa="exa --sort=type --tree -L=2"
+alias exalong="exa --long --tree --sort=type -L=2"
 
-# better than just 'sudo' 
+# better than just 'sudo'
 alias pls="sudo"
 alias plz="sudo"
 alias please="sudo"
@@ -25,5 +23,7 @@ alias volumedown="pulsemixer --change-volume -5"
 alias mute="pactl set-sink-mute @DEFAULT_SINK@ 1"
 alias unmute="pactl set-sink-mute @DEFAULT_SINK@ 0"
 
-# calcurse is a great todo / planner
+# calcurse is a great todo/planner
 alias todo="calcurse"
+
+alias close="exit"
